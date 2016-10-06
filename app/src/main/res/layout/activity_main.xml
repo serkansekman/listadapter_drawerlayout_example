@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.demo.serkansekman.drawermenu.MainActivity">
+
+   <android.support.v4.widget.DrawerLayout
+       android:id="@+id/drawer_layout"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+
+      <android.support.design.widget.AppBarLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@color/white"
+          android:theme="@style/AppTheme.AppBarOverlay">
+
+         <android.support.v7.widget.Toolbar
+             android:id="@+id/toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/colorToolbar"
+             android:fitsSystemWindows="true"
+             android:minHeight="?attr/actionBarSize"
+             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+         <!-- Main Ekranı -->
+         <RelativeLayout
+             android:id="@+id/main_content"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+         </RelativeLayout>
+
+      </android.support.design.widget.AppBarLayout>
+
+      <!-- Draver Tasarımı -->
+      <RelativeLayout
+          android:id="@+id/drawer_pane"
+          android:layout_width="280dp"
+          android:layout_height="match_parent"
+          android:layout_gravity="start"
+          android:background="@color/drawer_p">
+
+         <!-- User Profile Alanı START -->
+         <RelativeLayout
+             android:id="@+id/profile_box"
+             android:layout_width="match_parent"
+             android:layout_height="200dp"
+             android:background="@drawable/user_bg2"
+             >
+
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/logo2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/user_about"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/logo"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp">
+
+               <ImageView
+                   android:id="@+id/user_pic"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:background="@drawable/user"/>
+
+               <LinearLayout
+                   android:id="@+id/names"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginLeft="5dp">
+
+                  <TextView
+                      android:id="@+id/user_name"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Serkan SEKMAN"
+                      android:textColor="@color/colorPrimary"
+                      android:textSize="12sp"
+                      android:textStyle="italic" />
+
+                  <Button
+                      android:id="@+id/cikis"
+                      android:layout_width="30dp"
+                      android:layout_height="20dp"
+                      android:text="Çıkış"
+                      android:layout_marginTop="5dp"
+                      android:textSize="12dp"
+                      android:textColor="@color/colorPrimary"
+                      android:background="@android:color/transparent"
+                      />
+
+               </LinearLayout>
+
+            </LinearLayout>
+
+         </RelativeLayout>
+         <!-- User Profile Alanı FINISH -->
+
+
+         <!--Drawer List -->
+         <ListView
+             android:id="@+id/nav_list"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_below="@+id/profile_box"
+             android:background="@color/white"
+             android:choiceMode="singleChoice" />
+
+      </RelativeLayout>
+
+
+
+   </android.support.v4.widget.DrawerLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>
